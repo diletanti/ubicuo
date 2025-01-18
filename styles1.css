@@ -1,0 +1,533 @@
+  /* Estilos de Página de Bienvenida, Botoneras, Interfaz principal */
+  body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
+    width: 117vh;
+    background-color: black;
+  }
+
+
+  /* Estilos para la bienvenida */
+  .welcome {
+    display: none;
+    z-index: 8000;
+    pointer-events: none; /* Evitar la interacción cuando esté oculto */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    /* Imagen vertical de bienvenida de carga rápida .webp alojada en blogger */
+    background-image: url('https://blogger.googleusercontent.com/img/a/AVvXsEjEmG6ViCtQSsnchImFrvs7NOXCPtm0n0GeTwqSRhhPb3LtapWtViAy61jiCLQ9gja1EovrmW2nxylHLvD7QgItONflNACxzrBd-EsLg0K4KlD0o72HWqUzKn0yrO4mliUJgp1ppITL_0nldXt55JEU6ZYjqGpunKUc5KB7902TOanGbPAHM-c9oSVzKU8K');
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: auto;
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla, aunque se recorte */
+  }
+
+  @media (orientation: landscape) {
+    .welcome {
+      /* Imagen horizontal de despedida de carga rápida .webp alojada en blogger */
+        background-image: url('https://blogger.googleusercontent.com/img/a/AVvXsEhe-NRBRf5po28B6WFXs6-E06FJV5sv9r1uH58An4iZRldYoqC1GNGBkrR6k79dVqX_0XwjLmoDQ0PPSYLMzI0WGPmW8Az7Li46g2H-0rXWqCAm_gHkkgwiJy5RtUBgCzpwMBzDSnyCHzKagm_QivkwlokeQUm8EQEMqMnGNc8SI8ffBxKnKw42klrVfxSi');
+    }
+  }
+
+
+
+  /* Estilos para la notificación */
+
+    /* ----------- Capa inhabilitadora --------------*/
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 2000;
+    }
+
+
+  .notification {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh 3vh;
+    color: #666;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 2vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial;
+    font-size: 2.8vh;
+    z-index: 5000;
+    width: 70vw;
+    text-align: center;
+  }
+
+  @media (orientation: landscape) {
+    .notification {
+      /* Ancho para el Banner de notificación en orientación horizontal */
+      width: 40vw;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  #dismiss-btn {
+    width: 9vh;
+    padding: 1vh 3vh 1vh 2.5vh;
+    font-size: 3vh;
+  }
+
+  #dismiss-btn:hover {
+    background-color: #0056b3;
+  }
+
+
+  
+
+
+
+  /* ------------------------------ */
+
+  #warning {
+    display: none;
+  }
+
+  .warning-bar {
+    visibility: none;
+  }
+
+  .cabecera {
+    width: 100vw;
+  }
+
+  .nav1, .nav2 {
+    display: flex;
+    /* flex-wrap: wrap; */ /* Permite que los botones se ajusten al ancho disponible */
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav1 {
+    position: fixed;
+    top: 0;
+    height: 5vh;
+    z-index: 1000;
+  }
+
+  .nav2 {
+    position: fixed;
+    top: 5vh;
+    height: 5vh;
+    justify-content: left;
+    z-index: 900;
+  }
+
+  .nav3 {
+    z-index: 800;
+    position: fixed;
+    top: 12vh;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .myContainer {
+    display: flex;
+    flex-direction: row;
+    /* dibuja el edificio pegado a la izquierda y abajo */
+    justify-content: left;
+    align-items: end;
+    margin-bottom: 0.5vh;
+    height: 87.5vh;
+    margin-top: 11vh;
+    font-size: 2.3vh;
+    font-family: Arial, sans-serif;
+  }
+
+  .classroom {
+    width: 9.3vh;
+    height: 9.3vh;
+    border: 0.2vh solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fff;
+    position: relative;
+  }
+    /* Quita el cursor de puntero cuando no hay texto en el elemento */
+    .classroom label:empty {
+      cursor: default;
+    }
+
+    /* Estilos para cada aula */
+    .label {
+      color: darkgreen;
+      text-align: center;
+      align-self: center;
+      margin-top: 0.2vh;
+    }
+    .occupant {
+      font-weight: bold;
+      text-align: center;
+      margin-top: auto;
+    }
+    .grupo {
+      text-align: center;
+      margin-bottom: 0.2vh;
+    }
+
+
+    .piso_parking_jard {
+      display: flex;
+      justify-content: end;
+      align-items: start;
+      flex-direction: column;
+      margin: 0 1.9vh 8.8vh 1.5vh;
+      /* height: 36vh; */
+      /* width: 10vh; */
+      /* background-color: #f7edd2; */
+    }
+        .coches {
+          width: 8vh;
+          margin: 0 0 2vh 1vh;
+        }
+        #jard {
+          height: 12vh;
+        }
+
+
+    .piso_inferior_vertical {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      /* consta de dos columnas separadas */
+      /* por un pasillo de 2vh */
+      /* height: 58vh; */
+      margin-bottom: 8.8vh;
+      background-color: #b7a49e;
+    }
+        .left-column_piso_inf {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .right-column_piso_inf {
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          margin-left: 2vh; /* ancho de pasillo */
+          padding-bottom: 4vh;
+        }
+
+    .piso_inferior_horizontal {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-left: -8.3vh;
+      margin-bottom: 10.5vh;
+      height: 10vh;
+    }
+      .row_piso_inf_A {
+        display: flex;
+        flex-direction: row;
+      }
+      .row_piso_inf_B {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        padding-top: 2vh;
+        background-color: #b7a49e;
+      }
+
+    .campo {
+      height: 40vh;
+      margin-left: -42vh;
+      margin-bottom: 37vh;
+    }
+    .patio {
+      z-index: 2;
+      margin-left: -24vh;
+      margin-bottom: 38vh;
+    }
+    #rec {
+      height: 28vh;
+      z-index: 2;
+      margin-left: -11vh;
+      margin-bottom: 50vh;
+      align-items: flex-start;
+      color: white;
+      border: 0;
+      background-color: rgb(0,0,0,0);
+    }
+    #rec .occupant {
+      z-index: 3;
+      font-weight: normal;
+      text-shadow: 0.2vh 0.2vh 0.4vh black;
+      font-size: 2.5vh;
+    }
+
+
+
+
+/* ---------------------------------------------------------------------------- */
+    #piso_superior {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      margin-left: -24.5vh;
+      margin-bottom: 10vh;
+      transition: margin-bottom 0.5s ease, transform 0.05s ease-out;
+    }
+        .column_piso_sup {
+          flex-direction: column;
+          padding-left: 2vh; /* ancho de pasillo */
+          background-color: #b7a49e;
+          position: relative;
+          z-index: 100;
+        }
+        #row_piso_sup {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+        }
+          .row_piso_sup_A {            
+            z-index: 100;
+            display: inline-flex;
+            justify-content: flex-end;
+          }
+          .row_piso_sup_B {
+            z-index: 100;
+            display: flex;
+            flex-direction: row;
+            background-color: #b7a49e;
+            padding-top: 2vh;
+            padding-left: 2vh;
+            padding-right: 2vh;
+          }
+
+      .sombra {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        margin-left: -65vh;
+        margin-bottom: -2vh;
+      }       
+          .sombra_column {
+            z-index: 90;
+            filter: blur(0.3vh);
+            height: 78vh;
+            width: 10vh;
+            margin-bottom: 0vh;
+            background-color: rgba(0, 0, 0, 0.3);
+          }
+          .sombra_fila {
+            z-index: 90;
+            filter: blur(0.3vh);
+            height: 10vh;
+            width: 53vh;
+            margin-bottom: 0vh;
+            background-color: rgba(0, 0, 0, 0.3);
+          }
+
+
+
+/* ---------------------------------------------------------------------------- */
+
+
+  #poli {
+    margin-left: -4vh;
+    height: 21vh;
+    width: 12vh;
+  }
+
+  #teatro {
+    /* margin-left: -2.18vh; */
+    /* width: 10.18vh; */
+  }
+
+  #tecno {
+    /* height: 12.8vh; */
+  }
+
+  #sala {
+    height: 16vh;
+    margin-top: 8vh;
+    background-color: #fff8b8;
+  }
+
+
+
+  #lab {
+    margin-top: 8vh;
+  }
+
+  #apo {
+    height: 6vh;
+  }
+
+  #bib {
+    margin-right: 4vh;
+  }
+
+  #aula3A {
+    cursor: pointer;
+  }
+
+
+
+
+
+
+
+
+  /* --------------- Botones ---------------------- */
+  button {
+    background-color: #00bbff; /* celeste */
+    border-radius: 0.5vh;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 2px black;
+    cursor: pointer;
+    border-style: none;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    margin: 0 0.3vh;
+    outline: none;
+    padding: 1vh 1vh;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .nav1 button {
+    flex: 1 1 auto; /* Permite que los botones se redimensionen automáticamente */
+    max-width: 20vh;
+    font-size: 2.3vh;
+  }
+
+  .nav2 button {
+    flex: 1 1 auto; /* Permite que los botones se redimensionen automáticamente */
+    max-width: 15vh;
+    font-size: 2.3vh;
+  }
+
+  .nav3 button {
+    width: 9vh;
+    margin-bottom: 0.4vh;
+    padding: 1vh 2vh;
+    font-size: 3vh;
+  }
+
+  .pulsado {
+    background-color: #557cb3; /* azul oscuro */
+    background-color: #ffabc7; 
+  }
+
+  button[disabled] {
+    background-color: #ffabc7; /* rosa apagado */
+    cursor: auto;
+    opacity: 0.8;
+  }
+
+  .button-2 {
+    margin-top: 0.5vh;
+    background-color: #ff4081; /* rosa */
+  }
+  .ahora-sin-pulsar {
+    background-color: #ff4081; /* rosa */
+  }
+  
+
+
+  #btnMenu {
+    font-size: 3vh;
+    color: #fff;
+    margin: 0 2vh;
+  }
+
+  #toggleButton {
+    background-color: #ff4081;
+  }
+
+
+  /* --------------- Botón dos posiciones ---------------------- */
+  .switch-container {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 2.5vh;
+  }
+
+  .label-switch {
+    margin: 0 1.3vh; /* 10px ≈ 1.3vh */
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 6.5vh; /* 50px ≈ 6.5vh */
+    height: 3.25vh; /* 25px ≈ 3.25vh */
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #00bbff;
+    transition: .4s;
+    border-radius: 50vh; /* Para hacer el borde redondeado */
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 2.73vh;
+    width: 2.73vh;
+    left: 0.26vh;
+    bottom: 0.26vh;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .slider {
+    background-color: #e91e63;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(3.12vh); /* 24px ≈ 3.12vh */
+  }

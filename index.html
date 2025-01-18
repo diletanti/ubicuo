@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+  
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <!-- Enlace al archivo manifest.json -->
+  <!-- <link rel="manifest" href="https://github.com/diletanti/ubicuo/blob/main/manifest.json"> -->
+  <!-- Iconos de Google -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
+  <!-- Iconos de Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="stylesheet" href="styles1.css">
+  <link rel="stylesheet" href="styles2.css">
+  <link rel="stylesheet" href="styles3.css">
+</head>
+
+
+
+
+
+
+
+<body>
+  <!-- Página de bienvenida -->
+  <div id="welcomePage" class="welcome"></div>
+
+    <!-- Overlay de carga -->
+  <div id="overlay" class="hidden"></div>
+  
+  <!-- Notificación de versión -->
+  <div id="notification" class="notification hidden">
+    <p>Versión 8:<br><br>Se elimina el tiempo de espera para la carga de datos.</p>
+    <button id="dismiss-btn">OK</button>
+  </div>
+  
+  <!-- Menú lateral -->
+  <div id="menu">
+    <div id="cartel">
+      <img src="https://blogsaverroes.juntadeandalucia.es/iesantonioalvarezlopez/files/2024/09/imagPanel.png" alt="Cabecera del menú" class="imagen-panel">
+    </div>
+    <ul>
+      <li onclick="playSound('wetSound'); cierraMenu();">
+        <i class="fas fa-home"></i> Inicio
+      </li>
+
+      <li onclick="playSound('wetSound');"><i class="fa-solid fa-table"></i>
+        <a href="https://trello.com/b/T8EeuNaS/tablon-virtual-2425" target="_blank" style="text-decoration: none; color: inherit;"></i>Tablón Virtual</a>
+      </li>
+
+      <li onclick="playSound('wetSound');"><i class="fas fa-hand-paper"></i>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSff6fHoTX7WOc8opxc_1RvkFFB8uGG8uPS91VesrZruOK3FEQ/viewform" target="_blank" style="text-decoration: none; color: inherit;"></i>Administrar parte</a>
+      </li>
+
+      <li onclick="playSound('wetSound');"><i class="fas fa-exclamation-triangle"></i>Incidencias TIC</li>
+
+      <li><i class="fas fa-calendar-alt"></i>Reservas</li>
+
+      <li><i class="fas fa-calendar-alt"></i>Ocupación</li>
+
+      <li><i class="fas fa-bars"></i>Más acciones</li>
+    </ul>
+  </div>
+
+
+
+  <!-- Ventana Modal TIC -->
+  <div id="modal-incidencias" class="modal">
+    <div class="modal-content">
+
+      <div class="top-bar">
+        <!-- Flecha hacia la izquierda -->
+          <button class="back-button" onclick="playSound('wetSound'); cerrarVentana();">&#x2190;</button>
+          <span class="title">Incidencias TIC</span>
+      </div>
+
+      <div class="modal-options"> 
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgs6Y5GUQ6gzY9DNI0gZWIeZxhfESliixvceAo7DWHdZaicw/viewform" target="_blank">
+            <button><i class="fas fa-key"></i> Claves G-Suite Alumnado</button>
+        </a>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScYvgJJMxycEmWVYKFzujpiebhdwd0vfk8xbbHdGW0ybPC4IQ/viewform" target="_blank">
+            <button><i class="fas fa-key"></i> Claves Pasen</button>
+        </a>
+        
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFl6sJV75NwZrsg2b5IaVawUqBm8L4gpIFpO7owsd97Twflg/viewform" target="_blank">
+            <button><i class="fas fa-wrench"></i> Incidencias material TIC</button>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- Ventana Modal Reservas -->
+  <div id="modal-reservas" class="modal">
+    <div class="modal-content">
+
+      <div class="top-bar">
+        <!-- Flecha hacia la izquierda -->
+          <button class="back-button" onclick="playSound('wetSound'); cerrarVentana();">&#x2190;</button>
+          <span class="title">Reservas</span>
+      </div>
+
+      <div class="modal-options">
+        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3a6JNxhKpbbwOq3ch7Jnu84edIHKdVAj_ZN6nAQyWEDa7rj9FCPJu7oXNl3HULtNnYRqmA20-y" target="_blank">
+            <button><i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-arrow-up arrow-icon"></i>
+            Carro Pasillo Azul
+            </button>
+        </a>
+
+        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0W-d3yI3KfDy4fvwetSokA-7XnWHB6NpVo7v9cOIFXmH62f2oDrIKAGg9obrMCQsToLPM3eJCn" target="_blank">
+            <button><i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-arrow-up arrow-icon"></i>
+            Carro Pasillo Marrón
+            </button>
+        </a>
+        
+        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ34IRrGMUjDH1FINXkbMSK4fQZNsKnUVHqF1Gj7gThkH8oXjX3RIXChgl_YgMj4wsAIm115YS3t" target="_blank">
+            <button><i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-arrow-up arrow-icon"></i>
+            Carro Pasillo Marrón 2
+            </button>
+        </a>
+
+        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2PBzltjsr4QMbUpRRKM8ZN9gtzpnH_YHUfRgijwfuRf2xgl93U4Wp4Dq59_affwLJMd_P3OUNh" target="_blank">
+            <button><i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-arrow-down arrow-icon"></i>
+            Carro Pasillo Amarillo
+            </button>
+        </a>
+
+        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1liYWJUS9lWuTDfWBc3eDx6eOb3-p1F0scSjhesDv2coSPjXgoBQi34U8unYdSJLjU1isEO5FE" target="_blank">
+            <button><i class="fas fa-university"></i>Ágora</button>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- Ventana Modal Ocupación -->
+  <div id="modal-ocupacion" class="modal">
+    <div class="modal-content">
+
+      <div class="top-bar">
+        <!-- Flecha hacia la izquierda -->
+          <button class="back-button" onclick="playSound('wetSound'); cerrarVentana();">&#x2190;</button>
+          <span class="title">Ocupación</span>
+      </div>
+
+      <div class="modal-options">
+        
+        <a href="https://calendar.google.com/calendar/u/0/embed?src=c_ltserui2tbgukopfcijsu3jkb8@group.calendar.google.com&ctz=Europe/Madrid" target="_blank">
+            <button><i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-arrow-up arrow-icon"></i>
+            Carro Pasillo Azul
+            </button>
+        </a>
+
+        <a href="https://calendar.google.com/calendar/u/0/embed?src=c_orl1aackihienj9297gfr6q260@group.calendar.google.com&ctz=Europe/Madrid" target="_blank">
+            <button><i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-arrow-up arrow-icon"></i>
+            Carro Pasillo Marrón
+            </button>
+        </a>
+        
+        <a href="https://calendar.google.com/calendar/u/0/embed?src=lhuefer198@g.educaand.es&ctz=Europe/Madrid" target="_blank">
+            <button><i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-arrow-up arrow-icon"></i>
+            Carro Pasillo Marrón 2
+            </button>
+        </a>
+
+        <a href="https://calendar.google.com/calendar/u/0/embed?src=c_tgkeiru6rdh1fmm84eadvga41o@group.calendar.google.com&ctz=Europe/Madrid" target="_blank">
+            <button><i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-arrow-down arrow-icon"></i>
+            Carro Pasillo Amarillo
+            </button>
+        </a>
+
+        <a href="https://calendar.google.com/calendar/u/0/embed?src=c_17dee9c91fac1376fc190217b04eb9d2254e7acfc49108fefec7b6694021c868@group.calendar.google.com&ctz=Europe/Madrid" target="_blank">
+            <button><i class="fas fa-university"></i>Ágora</button>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+   <!-- Ventana Modal Más Acciones -->
+  <div id="modal-mas-acciones" class="modal">
+    <div class="modal-content">
+
+      <div class="top-bar">
+        <!-- Flecha hacia la izquierda -->
+          <button class="back-button" onclick="playSound('wetSound'); cerrarVentana();">&#x2190;</button>
+          <span class="title">Más acciones</span>
+      </div>
+
+      <div class="modal-options">
+        <a href="https://script.google.com/a/macros/g.educaand.es/s/AKfycbwvGZfoGiOFp9gP4xKgZl3f3YSL258eoZYiwT5PtxV8wFMj9lBxohqey-sKfmFHCCMcGQ/exec" target="_blank">
+          <button>
+            <i class="fa-solid fa-database"></i>Programa Gestión de Convivencia
+          </button>
+        </a>
+
+        <a href="https://docs.google.com/document/d/1aVMHgWdMq7aiETy6uI_EEYuISclV0r2wwop9GbaQjko/edit" target="_blank">
+          <button>
+            <i class="fa-solid fa-person-hiking"></i>Actividades extraescolares
+          </button>
+        </a>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUvHxyW6da4wTSYL2VnwkUOefdCKu5qVsERbHUddToMGy7hw/viewform" target="_blank">
+          <button>
+            <i class="fa-solid fa-screwdriver-wrench"></i>Solicitar reparación
+          </button>
+        </a>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVkHxtBw6lL3iuPE8QenjaPWbF7QcDDdi6WYp58uhjeNhNIg/viewform" target="_blank">
+          <button>
+            <i class="fas fa-lightbulb"></i>Supervisión consumo eléctrico
+          </button>
+        </a>
+
+        <a href="https://blogsaverroes.juntadeandalucia.es/iesantonioalvarezlopez/files/2024/10/Alumnado.pdf" target="_blank">
+          <button>
+            <i class="fa-solid fa-table-cells"></i>Horarios de grupos
+          </button>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+ 
+
+  <!-- Interfaz Principal -->
+  <div id="mainInterface">
+    <div class="cabecera">
+
+      <div class="nav1">
+        <button id="btnDia0" onclick="cambiaDia(0); playSound('clic');">LUN</button>
+        <button id="btnDia1" onclick="cambiaDia(1); playSound('clic');">MAR</button>
+        <button id="btnDia2" onclick="cambiaDia(2); playSound('clic');">MIE</button>
+        <button id="btnDia3" onclick="cambiaDia(3); playSound('clic');">JUE</button>
+        <button id="btnDia4" onclick="cambiaDia(4); playSound('clic');">VIE</button>
+        <i id="btnMenu" class="fas fa-bars" onclick="playSound('wetSound')"></i>
+      </div>
+
+      <div class="nav2">
+        <button class="button-2" id="btnListado" onclick="showListado()">PROFES.</button>
+        <button disabled class="button-2" id="btnAhora" onclick="ahora()">AHORA</button>
+        <button class="button-2" id="toggleButton" onclick="togglePiso()">SUBIR</button>
+        <div class="switch-container">
+          <span class="label-switch">PROF</span>
+            <label class="switch">
+              <input type="checkbox" id="soundSwitch">
+              <span class="slider"></span>
+            </label>
+          <span class="label-switch">AULA</span>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="nav3">
+        <button id="btnSes0" onclick="cambiaSesion(0); playSound('clic');">1ª</button>
+        <button id="btnSes1" onclick="cambiaSesion(1); playSound('clic');">2ª</button>
+        <button id="btnSes2" onclick="cambiaSesion(2); playSound('clic');">3ª</button>
+        <button id="btnSes3" onclick="cambiaSesion(3); playSound('clic');">REC</button>
+        <button id="btnSes4" onclick="cambiaSesion(4); playSound('clic');">4ª</button>
+        <button id="btnSes5" onclick="cambiaSesion(5); playSound('clic');">5ª</button>
+        <button id="btnSes6" onclick="cambiaSesion(6); playSound('clic');">6ª</button>
+    </div>
+
+
+    <div class="myContainer">
+
+      <div class="piso_parking_jard">
+
+        <img class="coches" src="https://blogsaverroes.juntadeandalucia.es/iesantonioalvarezlopez/files/2024/07/coches.png">
+        <div class="classroom" id="jard">
+          <div class="label">JARD</div>
+          <div class="occupant" id="jardP"></div>
+          <div class="grupo" id="jardG"></div>
+        </div>
+
+      </div>
+
+      <div class="piso_inferior_vertical">
+
+        <div class="left-column_piso_inf">
+
+          <div class="classroom" id="poli">
+              <div class="label">POLI</div>
+              <div class="occupant" id="poliP"></div>
+              <div class="grupo" id="poliG"></div>
+          </div>
+          
+          <div class="classroom" id="sala">
+              <div class="label">GUA</div>
+              <div class="occupant" id="sala1P"></div>
+              <div class="occupant" id="sala2P"></div>
+              <div class="occupant" id="sala3P"></div>
+              <div class="occupant" id="sala4P"></div>
+          </div>
+
+          <div class="classroom" id="aula3Div">
+              <div class="label">3º DIV</div>
+              <div class="occupant" id="aula3DivP"></div>
+              <div class="grupo" id="aula3DivG"></div>
+          </div>
+
+        </div>
+
+        <div class="right-column_piso_inf">
+
+          <div class="classroom" id="teat">
+              <div class="label">TEAT</div>
+              <div class="occupant" id="teatP"></div>
+              <div class="grupo" id="teatG"></div>
+          </div>
+          
+          <div class="classroom" id="tecno" style="margin-top: -0.2vh;">
+              <div class="label">TEC</div>
+              <div class="occupant" id="tecnoP"></div>
+              <div class="grupo" id="tecnoG"></div>
+          </div>
+
+          <div class="classroom" id="lab" >
+              <div class="label">LAB</div>
+              <div class="occupant" id="labP"></div>
+              <div class="grupo" id="labG"></div>
+          </div>
+          
+          <div class="classroom" id="mus" style="margin-top: -0.2vh;">
+              <div class="label">MÚS</div>
+              <div class="occupant" id="musP"></div>
+              <div class="grupo" id="musG"></div>
+          </div>
+
+          <div class="classroom" id="aulaFp" style="margin-top: -0.2vh;">
+              <div class="label">FP</div>
+              <div class="occupant" id="aulaFpP"></div>
+              <div class="grupo" id="aulaFpG"></div>
+          </div>
+
+          <div class="classroom" id="apo" style="margin-top: -0.2vh;">
+              <div class="label">APO</div>
+              <div class="occupant" id="apoP"></div>
+              <div class="grupo" id="apoG"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="piso_inferior_horizontal">
+
+        <div class="row_piso_inf_A">
+
+          <div class="classroom" id="aula4Div">
+              <div class="label">4DIV</div>
+              <div class="occupant" id="aula4DivP"></div>
+              <div class="grupo" id="aula4DivG"></div>
+          </div>
+
+          <div class="classroom" id="aula1BaA" style="margin-left: -0.2vh;">
+              <div class="label">1º Ba A</div>
+              <div class="occupant" id="aula1BaAP"></div>
+              <div class="grupo" id="aula1BaAG"></div>
+          </div>
+
+        </div>
+
+        <div class="row_piso_inf_B">
+
+          <div class="classroom" id="bib">
+              <div class="label">BIB</div>
+              <div class="occupant" id="bibP"></div>
+              <div class="grupo" id="bibG"></div>
+          </div>
+          
+          <div class="classroom" id="aula3A">
+              <div class="label">3º A</div>
+              <div class="occupant" id="aula3AP"></div>
+              <div class="grupo" id="aula3AG"></div>
+          </div>
+
+          <div class="classroom" id="aula1A" style="margin-left: -0.2vh;">
+              <div class="label">1º A</div>
+              <div class="occupant" id="aula1AP"></div>
+              <div class="grupo" id="aula1AG"></div>
+          </div>
+          
+          <div class="classroom" id="aula4A" style="margin-left: -0.2vh;">
+              <div class="label">4º A</div>
+              <div class="occupant" id="aula4AP"></div>
+              <div class="grupo" id="aula4AG"></div>
+          </div>
+
+          <div class="classroom" id="aula2A" style="margin-left: -0.2vh;">
+              <div class="label">2º A</div>
+              <div class="occupant" id="aula2AP"></div>
+              <div class="grupo" id="aula2AG"></div>
+          </div>
+
+          <div class="classroom" id="epv" style="margin-left: -0.2vh; margin-right: 2vh;">
+              <div class="label">EPV</div>
+              <div class="occupant" id="epvP"></div>
+              <div class="grupo" id="epvG"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
+      <img class="campo" src="https://blogsaverroes.juntadeandalucia.es/iesantonioalvarezlopez/files/2024/08/campo_futbol.png">
+
+      <div class="classroom patio" id="gym">
+          <div class="label">PATIO</div>
+          <div class="occupant" id="gymP"></div>
+          <div class="grupo" id="gymG"></div>
+      </div>
+
+      <div class="classroom rec" id="rec">
+          <div class="occupant" id="rec1P"></div>
+          <div class="occupant" id="rec2P"></div>
+          <div class="occupant" id="rec3P"></div>
+          <div class="occupant" id="rec4P"></div>
+          <div class="occupant" id="rec5P"></div>
+          <div class="occupant" id="rec6P"></div>
+          <div class="occupant" id="rec7P"></div>
+          <div class="occupant" id="rec8P"></div>
+      </div>
+
+
+      <div id="piso_superior">
+
+        <div class="column_piso_sup">
+
+          <div class="classroom" id="aula3D">
+              <div class="label">3º D</div>
+              <div class="occupant" id="aula3DP"></div>
+              <div class="grupo" id="aula3DG"></div>
+          </div>
+          
+          <div class="classroom" id="aula4D" style="margin-top: -0.2vh;">
+              <div class="label">4º D</div>
+              <div class="occupant" id="aula4DP"></div>
+              <div class="grupo" id="aula4DG"></div>
+          </div>
+
+          <div class="classroom" id="aula3C" style="margin-top: -0.2vh;">
+              <div class="label">3º C</div>
+              <div class="occupant" id="aula3CP"></div>
+              <div class="grupo" id="aula3CG"></div>
+          </div>
+          
+          <div class="classroom" id="aula1C" style="margin-top: -0.2vh;">
+              <div class="label">1º C</div>
+              <div class="occupant" id="aula1CP"></div>
+              <div class="grupo" id="aula1CG"></div>
+          </div>
+
+          <div class="classroom" id="aula4C" style="margin-top: 2vh;">
+              <div class="label">4º C</div>
+              <div class="occupant" id="aula4CP"></div>
+              <div class="grupo" id="aula4CG"></div>
+          </div>
+
+          <div class="classroom" id="aula2C" style="margin-top: -0.2vh;">
+              <div class="label">2º C</div>
+              <div class="occupant" id="aula2CP"></div>
+              <div class="grupo" id="aula2CG"></div>
+          </div>
+
+          <div class="classroom" id="tic" style="margin-top: -0.2vh;">
+              <div class="label">TIC</div>
+              <div class="occupant" id="ticP"></div>
+              <div class="grupo" id="ticG"></div>
+          </div>
+
+          <div class="classroom" id="aula2Fp" style="margin-top: -0.2vh;">
+              <div class="label">2º FP</div>
+              <div class="occupant" id="aula2FpP"></div>
+              <div class="grupo" id="aula2FpG"></div>
+          </div>
+
+        </div>
+
+        <div id="row_piso_sup">
+
+          <div class="row_piso_sup_A">
+
+            <div class="classroom" id="aula1BaB">
+                <div class="label">1º Ba B</div>
+              <div class="occupant" id="aula1BaBP"></div>
+                <div class="grupo" id="aula1BaBG"></div>
+            </div>
+
+            <div class="classroom" id="aula2BaA" style="margin-left: -0.2vh;">
+                <div class="label">2º Ba A</div>
+              <div class="occupant" id="aula2BaAP"></div>
+                <div class="grupo" id="aula2BaAG"></div>
+            </div>
+
+          </div>
+
+          <div class="row_piso_sup_B">
+
+            <div class="classroom" id="aula3B">
+                <div class="label">3º B</div>
+                <div class="occupant" id="aula3BP"></div>
+                <div class="grupo" id="aula3BG"></div>
+            </div>
+
+            <div class="classroom" id="aula1B" style="margin-left: -0.2vh;">
+                <div class="label">1º B</div>
+                <div class="occupant" id="aula1BP"></div>
+                <div class="grupo" id="aula1BG"></div>
+            </div>
+
+            <div class="classroom" id="aula4B" style="margin-left: -0.2vh;">
+                <div class="label">4º B</div>
+                <div class="occupant" id="aula4BP"></div>
+                <div class="grupo" id="aula4BG"></div>
+            </div>
+            
+            <div class="classroom" id="aula2B" style="margin-left: -0.2vh;">
+                <div class="label">2º B</div>
+                <div class="occupant" id="aula2BP"></div>
+                <div class="grupo" id="aula2BG"></div>
+            </div>
+
+            <div class="classroom" id="aula2BaB" style="margin-left: -0.2vh;">
+                <div class="label">2º Ba B</div>
+                <div class="occupant" id="aula2BaBP"></div>
+                <div class="grupo" id="aula2BaBG"></div>
+            </div>
+            
+          </div>
+
+        </div>
+
+        <div class="sombra">
+          <div class="sombra_column"></div>
+          <div class="sombra_fila"></div>
+        </div>
+
+
+      </div>
+
+
+    </div> 
+
+  </div><!-- Fin Interfaz Principal -->
+
+
+
+
+
+
+
+  <!-- Interfaz Secundaria -->
+  <div id="secondaryInterface" style="display: none;">
+
+    <div id="nombre">Nombre y apellidos</div>
+    <div id="tabla1" class="horario">
+      <!-- Días de la semana -->
+      <div class="header">LUN</div>
+      <div class="header">MAR</div>
+      <div class="header">MIÉ</div>
+      <div class="header">JUE</div>
+      <div class="header">VIE</div>
+
+      <!-- Fila 0 -->
+      <div class="cell" id="lun0"></div>
+      <div class="cell" id="mar0"></div>
+      <div class="cell" id="mie0"></div>
+      <div class="cell" id="jue0"></div>
+      <div class="cell" id="vie0"></div>
+
+      <!-- Fila 1 -->
+      <div class="cell" id="lun1"></div>
+      <div class="cell" id="mar1"></div>
+      <div class="cell" id="mie1"></div>
+      <div class="cell" id="jue1"></div>
+      <div class="cell" id="vie1"></div>
+
+      <!-- Fila 2 -->
+      <div class="cell" id="lun2"></div>
+      <div class="cell" id="mar2"></div>
+      <div class="cell" id="mie2"></div>
+      <div class="cell" id="jue2"></div>
+      <div class="cell" id="vie2"></div>
+
+      <!-- Fila 3 -->
+      <div class="cell" id="lun3"></div>
+      <div class="cell" id="mar3"></div>
+      <div class="cell" id="mie3"></div>
+      <div class="cell" id="jue3"></div>
+      <div class="cell" id="vie3"></div>
+
+      <!-- Fila 4 -->
+      <div class="cell" id="lun4"></div>
+      <div class="cell" id="mar4"></div>
+      <div class="cell" id="mie4"></div>
+      <div class="cell" id="jue4"></div>
+      <div class="cell" id="vie4"></div>
+
+      <!-- Fila 5 -->
+      <div class="cell" id="lun5"></div>
+      <div class="cell" id="mar5"></div>
+      <div class="cell" id="mie5"></div>
+      <div class="cell" id="jue5"></div>
+      <div class="cell" id="vie5"></div>
+
+      <!-- Fila 6 -->
+      <div class="cell" id="lun6"></div>
+      <div class="cell" id="mar6"></div>
+      <div class="cell" id="mie6"></div>
+      <div class="cell" id="jue6"></div>
+      <div class="cell" id="vie6"></div>
+    </div>
+
+    <button class="btnVolver" onclick="showMain(); playSound('wetSound');">Volver</button>
+
+  </div><!-- Fin Interfaz Secundaria -->
+    
+
+
+  <!-- Interfaz Terciaria -->
+  <div id="terciariaInterface" style="display: none;">
+
+    <div id="espacio">Espacio</div>
+    <div id="tabla2" class="horario">
+      <!-- Días de la semana -->
+      <div class="header">LUN</div>
+      <div class="header">MAR</div>
+      <div class="header">MIÉ</div>
+      <div class="header">JUE</div>
+      <div class="header">VIE</div>
+
+      <!-- Fila 0 -->
+      <div class="cell" id="lun-0"></div>
+      <div class="cell" id="mar-0"></div>
+      <div class="cell" id="mie-0"></div>
+      <div class="cell" id="jue-0"></div>
+      <div class="cell" id="vie-0"></div>
+
+      <!-- Fila 1 -->
+      <div class="cell" id="lun-1"></div>
+      <div class="cell" id="mar-1"></div>
+      <div class="cell" id="mie-1"></div>
+      <div class="cell" id="jue-1"></div>
+      <div class="cell" id="vie-1"></div>
+
+      <!-- Fila 2 -->
+      <div class="cell" id="lun-2"></div>
+      <div class="cell" id="mar-2"></div>
+      <div class="cell" id="mie-2"></div>
+      <div class="cell" id="jue-2"></div>
+      <div class="cell" id="vie-2"></div>
+
+      <!-- Fila 3 -->
+      <div class="cell" id="lun-3"></div>
+      <div class="cell" id="mar-3"></div>
+      <div class="cell" id="mie-3"></div>
+      <div class="cell" id="jue-3"></div>
+      <div class="cell" id="vie-3"></div>
+
+      <!-- Fila 4 -->
+      <div class="cell" id="lun-4"></div>
+      <div class="cell" id="mar-4"></div>
+      <div class="cell" id="mie-4"></div>
+      <div class="cell" id="jue-4"></div>
+      <div class="cell" id="vie-4"></div>
+
+      <!-- Fila 5 -->
+      <div class="cell" id="lun-5"></div>
+      <div class="cell" id="mar-5"></div>
+      <div class="cell" id="mie-5"></div>
+      <div class="cell" id="jue-5"></div>
+      <div class="cell" id="vie-5"></div>
+
+      <!-- Fila 6 -->
+      <div class="cell" id="lun-6"></div>
+      <div class="cell" id="mar-6"></div>
+      <div class="cell" id="mie-6"></div>
+      <div class="cell" id="jue-6"></div>
+      <div class="cell" id="vie-6"></div>
+    </div>
+
+    <button class="btnVolver" onclick="showMain(); playSound('wetSound');">Volver</button>
+
+  </div><!-- Fin Interfaz Terciaria -->
+
+
+
+
+  <!-- Interfaz Listado de profesores -->
+  <div id="listadoInterface" style="display: none;">
+    
+    <input type="text" id="filtroInput" onkeyup="filtrarLista()" placeholder="Buscar profesor...">
+    <ul class="lista-prof" id="miLista"></ul>
+
+    <button class="btnVolver" onclick="showMain(); playSound('wetSound');">Volver</button>
+
+  </div><!-- Fin Listado de profesores -->
+
+
+
+
+
+  <!-- audios -->
+  <audio id="bump" src="https://cdn.freesound.org/previews/752/752670_16155788-lq.mp3" preload="auto"></audio>
+  <audio id="clic" src="https://cdn.freesound.org/previews/54/54414_497386-lq.mp3" preload="auto"></audio>
+  <audio id="wetSound" src="https://cdn.freesound.org/previews/565/565903_12724759-lq.mp3" preload="auto"></audio>
+  <audio id="beep" src="https://cdn.freesound.org/previews/680/680823_14667547-lq.mp3" preload="auto"></audio>
+
+
+
+  <script src="script.js" defer></script>
+
+
+
+</body>
+
+</html>

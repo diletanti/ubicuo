@@ -1,0 +1,129 @@
+  /* 
+  Estilos para la tabla de horarios, la de ocupación y el listado de profesores
+  */
+  
+  #secondaryInterface, #terciariaInterface {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 4vh;
+    background-color: #000;
+  }
+
+  #nombre, #espacio {
+    margin-top: 6vh;
+    margin-bottom: 3vh;
+    font-size: 3vh;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .horario {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas iguales */
+    /* La fila del medio (4ª fila) es la mitad de alta que las demás */
+    grid-template-rows: 8vh 8vh 8vh 8vh 4vh 8vh 8vh 8vh;
+    gap: 0.5vh; /* Espacio entre celdas */
+    background-color: #000; /* Se usa para crear un borde */
+  }
+
+
+  .horario div {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.6vh;
+  }
+
+  .horario .header {
+    color: #8AB3FF;
+    background-color: #000;
+  }
+  
+  #tabla1 .cell {
+    background-color: #99ccff; // azul claro
+  }
+
+
+  /* Estilos específicos para la segunda tabla */
+  #tabla2 .cell {
+    background-color: #f7c8d0; /* rosa */
+  }
+
+  /* Estilos específicos para las celdas vacías */
+  #tabla1 .gris,  #tabla2 .gris {
+    background-color: gray;
+  }
+
+  .btnVolver {
+    position: fixed; /* Fija la posición del botón */
+    bottom: 4vh; /* Distancia desde la parte inferior de la pantalla */
+    right: 4vh; /* Distancia desde la parte derecha de la pantalla */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    font-size: 3vh;
+    padding: 1vh 2.5vh 1vh 2.5vh;
+  }
+
+
+
+  // parpadeo
+  @keyframes parpadeo {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  .blink {
+    animation: parpadeo 1s infinite;
+  }
+
+  // --------------------------- Interfaz de listado ---------------------------
+  #listadoInterface {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c2c2c2;
+  }
+
+  .lista-prof {
+    list-style-type: none;
+    width: 100vw;
+    padding: 0 2vh;
+    box-sizing: border-box;
+  }
+
+  /* --------  Estilo para la barra de búsqueda ---------- */
+  #filtroInput {
+    width: 90vw;
+    padding: 2vh;
+    font-family: Arial, sans-serif;
+    font-size: 2.7vh; /* Tamaño de fuente en vh (altura del viewport) */
+    box-sizing: border-box;
+    border: 0.3vh solid #ccc; /* Add a grey border */
+    border-radius: 1vh;
+    margin-top: 1vh; /* Add some space below the input */
+    margin-bottom: 1vh; /* Add some space below the input */
+  }
+
+  .list-item {
+    text-align: left;
+    background-color: #ffffff;
+    padding: 3vh;
+    border-bottom: 0.2vh solid #dee2e6;
+    font-size: 2.5vh;
+  }
+
+  .list-item:last-child {
+    border-bottom: none;
+  }
+
+  li {
+      cursor: pointer; /* Muestra un cursor de mano sobre los items */
+  }
