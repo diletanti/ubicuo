@@ -359,14 +359,16 @@
     width: 12vh;
   }
 
-  #teatro {
-    /* margin-left: -2.18vh; */
-    /* width: 10.18vh; */
-  }
+  /*
+    #teatro {
+      margin-left: -2.18vh;
+      width: 10.18vh;
+    }
 
-  #tecno {
-    /* height: 12.8vh; */
-  }
+    #tecno {
+      height: 12.8vh;
+    }
+  */
 
   #sala {
     height: 16vh;
