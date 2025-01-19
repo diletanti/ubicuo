@@ -2,8 +2,10 @@ const CACHE_NAME = "ubicuo-cache-v1"; // Nombre del caché
 const urlsToCache = [
   "/", // La raíz del proyecto
   "/index.html", // Tu página principal
-  "/styles.css", // Archivo de estilos
-  "/script.js", // Archivo JavaScript (ajusta al nombre de tu archivo)
+  "/styles1.css", // Archivo de estilos
+  "/styles2.css", // Archivo de estilos
+  "/styles3.css", // Archivo de estilos
+  "/script.js", // Archivo JavaScript
   "/manifest.json", // El archivo manifest
   "/ubi-192.png", // Icono 192x192
   "/ubi-512.png", // Icono 512x512
