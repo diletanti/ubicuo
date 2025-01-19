@@ -1,3 +1,14 @@
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/ubicuo/service-worker.js")
+      .then((registration) => {
+        console.log("Service Worker registrado con éxito:", registration.scope);
+      })
+      .catch((error) => {
+        console.error("Error al registrar el Service Worker:", error);
+      });
+  }
+
+
   let numProf, arrProf, arrHorarios = [], arrAulas = [], arrOcup = [], diaSemana, sesionActual;
   const btnAhora = document.getElementById('btnAhora');
   const soundSwitch = document.getElementById('soundSwitch');
