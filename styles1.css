@@ -4,8 +4,10 @@
     flex-direction: column;
     margin: 0;
     height: 100vh;
-    width: 117vh;
+    /*width: 117vh;*/
+    width: 100vw; /* Cambiar 117vh a 100vw */
     background-color: black;
+    overflow-x: hidden; /* Previene el scroll horizontal */
   }
 
 
@@ -114,7 +116,7 @@
 
   .nav1, .nav2 {
     display: flex;
-    /* flex-wrap: wrap; */ /* Permite que los botones se ajusten al ancho disponible */
+    flex-wrap: wrap; /* Permite que los botones se ajusten al ancho disponible */
     justify-content: center; /* Centra los botones horizontalmente */
     align-items: center;
     width: 100%;
@@ -369,6 +371,7 @@
       height: 12.8vh;
     }
   */
+
 
   #sala {
     height: 16vh;
